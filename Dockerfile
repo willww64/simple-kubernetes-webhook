@@ -11,6 +11,7 @@ COPY . /work
 
 # Build admission-webhook
 RUN --mount=type=cache,target=/root/.cache/go-build,sharing=private \
+  GOPROXY=https://goproxy.cn,direct \
   go build -o bin/admission-webhook .
 
 # ---

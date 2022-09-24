@@ -6,7 +6,7 @@ openssl req -new -x509 -days 365 -key ca.key \
   -subj "/C=AU/CN=simple-kubernetes-webhook"\
   -out ca.crt
 
-openssl req -newkey rsa:2048 -nodes -keyout server.key \
+openssl req -newkey rsa:2048 -nodes -sha256 -keyout server.key \
   -subj "/C=AU/CN=simple-kubernetes-webhook" \
   -out server.csr
 
